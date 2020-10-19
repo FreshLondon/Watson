@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3ae6cb85-6cb8-4165-b09a-85523f7d7825" name="watson.freshlondon.biz" url="https://freshlondon.biz">
+        <fileTransfer rootFolder="/home/freshlon/subdomains/testing.freshlondon.biz/wp-content/plugins" accessType="SFTP" host="host.alexhigh.co.uk" port="2211" sshConfigId="c7fe1490-da02-4658-bcc8-05ae464830f2" sshConfig="root@host.alexhigh.co.uk:2211 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
