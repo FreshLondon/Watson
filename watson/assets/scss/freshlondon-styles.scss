@@ -1,0 +1,14 @@
+/**
+ * Here we import all the SCSS into one.
+ * 
+ * @version 1.0
+ * @since 1.0
+ */
+// Import style libs, variables and mixins
+@import 'lib/variables';
+@import 'lib/mixins';
+
+// Import style components
+body {
+  @import 'components/slider';
+}

@@ -1,0 +1,67 @@
+
+.slider {
+  .slick-track {
+	.slick-slide {
+	  > div {
+		padding: 0 4px;
+
+		.slider-img {
+		  padding-top: 56%;
+		  background-repeat: no-repeat;
+		  background-position: center;
+
+		  @include respond-above(sm) {
+			padding: unset;
+			height: calc(100vh - 110px);
+			display: block;
+		  }
+
+		  img {
+			display: none;
+		  }
+		}
+	  }
+	}
+  }
+
+  button {
+	&.slick-prev,
+	&.slick-next {
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  z-index: 999;
+	  font-size: 1rem;
+	}
+
+	&.slick-prev {
+	  left: 0;
+	}
+
+	&.slick-next {
+	  right: 0;
+	}
+  }
+
+  ul.slick-dots {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 999;
+	font-size: 1rem;
+	display: flex !important;
+	justify-content: space-between;
+
+	li {
+	  height: unset;
+	  width: unset;
+	  margin: 0 .25rem;
+
+	  button {
+		padding: .5rem 1rem;
+		font-size: 1rem;
+	  }
+	}
+  }
+}

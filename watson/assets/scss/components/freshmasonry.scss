@@ -1,0 +1,28 @@
+.masonry {
+  column-count: 1;
+  column-gap: .5rem;
+  @include respond-above(xs) {
+	column-count: 2;
+	column-gap: .75rem;
+  }
+  @include respond-above(md) {
+	column-count: 3;
+	column-gap: 1rem;
+  }
+  @include respond-above(lg) {
+	column-count: 4;
+  }
+
+  .masonry-item {
+	background-color: #eee;
+	display: inline-block;
+	margin: 0 0 .5rem;
+	width: 100%;
+	@include respond-above(xs) {
+	  margin: 0 0 .75rem;
+	}
+	@include respond-above(sm) {
+	  margin: 0 0 1rem;
+	}
+  }
+}

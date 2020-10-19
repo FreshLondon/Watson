@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5dd6b78-e203-401e-8089-2b0b4a138aa1" name="Default Changelist" comment="" />
+    <list default="true" id="d5dd6b78-e203-401e-8089-2b0b4a138aa1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/watson/assets/gulpfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/js/components/footerscripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/js/components/slick.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/js/lib/parallax.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/scss/components/freshmasonry.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/scss/components/freshslider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/scss/freshlondon-styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/scss/lib/mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/scss/lib/slick-theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/scss/lib/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/watson.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/widgets/widget-masonry.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/widgets/widget-slider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/widgets/widget-tag-buttons.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,10 +29,21 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1j7HumEBDhsjA0hzduV6KuvDP5J" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,8 +52,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/watson" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/watson/widgets" />
+      <recent name="$PROJECT_DIR$/watson" />
+      <recent name="$PROJECT_DIR$/watson/assets/compiled" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -34,7 +76,9 @@
       <option name="presentableId" value="Default" />
       <updated>1603148434886</updated>
       <workItem from="1603148435962" duration="3000" />
-      <workItem from="1603148444715" duration="79000" />
+      <workItem from="1603148444715" duration="107000" />
+      <workItem from="1603149465547" duration="744000" />
+      <workItem from="1603150502403" duration="1116000" />
     </task>
     <servers />
   </component>
@@ -46,9 +90,21 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="190" key="#Deployment/0.0.1680.1050@0.0.1680.1050" timestamp="1603148522912" />
+    <state x="659" y="451" key="NewPhpFileDialog" timestamp="1603149480273">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="659" y="451" key="NewPhpFileDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603149480273" />
+    <state x="539" y="235" width="602" height="580" key="find.popup" timestamp="1603151598983">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="539" y="235" width="602" height="580" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1603151598983" />
     <state x="745" y="182" width="423" height="685" key="ftp.server.browser" timestamp="1603148501093">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="745" y="182" width="423" height="685" key="ftp.server.browser/0.0.1680.1050@0.0.1680.1050" timestamp="1603148501093" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1603150211243">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1603150211243" />
   </component>
 </project>
