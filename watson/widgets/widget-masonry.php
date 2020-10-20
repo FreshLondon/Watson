@@ -23,8 +23,8 @@ class Widget_Masonry extends Widget_Base {
 	public function __construct( $data = [], $args = null ) {
 		parent::__construct( $data, $args );
 
-		wp_register_script( 'fancybox-js', get_stylesheet_directory_uri() . '/assets/app/dist/jquery.fancybox.min.js', [ 'elementor-frontend' ], '3.5.7', true );
-		wp_register_style( 'fancybox-css', get_stylesheet_directory_uri() . '/assets/app/dist/jquery.fancybox.min.css', [ 'elementor-frontend' ], '3.5.7', 'screen' );
+		wp_register_script( 'fancybox-js', esc_url( plugins_url( '../assets/compiled/jquery.fancybox.min.js', __FILE__ ) ) , [ 'elementor-frontend' ], '3.5.7', true );
+		wp_register_style( 'fancybox-css', esc_url( plugins_url( '../assets/compiled/jquery.fancybox.min.css', __FILE__ ) ), [ 'elementor-frontend' ], '3.5.7', 'screen' );
 	}
 
 	public function get_script_depends() {

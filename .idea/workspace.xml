@@ -2,24 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5dd6b78-e203-401e-8089-2b0b4a138aa1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/watson/assets/gulpfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/js/components/footerscripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/js/components/slick.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/js/lib/parallax.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/scss/components/freshmasonry.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/scss/components/freshslider.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/scss/freshlondon-styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/scss/lib/mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/scss/lib/slick-theme.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/scss/lib/variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/watson.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/widgets/widget-masonry.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/widgets/widget-slider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/widgets/widget-tag-buttons.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/compiled/footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/compiled/header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/compiled/jquery.fancybox.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/compiled/jquery.fancybox.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/compiled/slick.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/compiled/watson-styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/assets/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/gulpfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/assets/scss/components/freshmasonry.scss" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/scss/components/masonry.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/assets/scss/components/freshslider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/scss/components/slider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/assets/scss/freshlondon-styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/scss/watson-styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/watson.php" beforeDir="false" afterPath="$PROJECT_DIR$/watson/watson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/widgets/widget-masonry.php" beforeDir="false" afterPath="$PROJECT_DIR$/watson/widgets/widget-masonry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/widgets/widget-slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/watson/widgets/widget-slider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,15 +45,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/watson/assets/compiled" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/watson/assets/compiled" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/watson" />
     </key>
@@ -78,12 +79,15 @@
       <workItem from="1603148435962" duration="3000" />
       <workItem from="1603148444715" duration="107000" />
       <workItem from="1603149465547" duration="744000" />
-      <workItem from="1603150502403" duration="1116000" />
+      <workItem from="1603150502403" duration="2636000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="440" y="190" key="#Deployment" timestamp="1603148522912">
@@ -94,10 +98,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="659" y="451" key="NewPhpFileDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603149480273" />
-    <state x="539" y="235" width="602" height="580" key="find.popup" timestamp="1603151598983">
+    <state x="406" y="68" width="1027" height="817" key="find.popup" timestamp="1603153117520">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="539" y="235" width="602" height="580" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1603151598983" />
+    <state x="406" y="68" width="1027" height="817" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1603153117520" />
     <state x="745" y="182" width="423" height="685" key="ftp.server.browser" timestamp="1603148501093">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

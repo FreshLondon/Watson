@@ -23,7 +23,7 @@ class Widget_Slider extends Widget_Base {
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
 
-        wp_register_script('slick-slider', get_stylesheet_directory_uri() . '/assets/app/dist/slick.min.js', ['elementor-frontend'], '1.0.0', true);
+        wp_register_script('slick-slider', esc_url( plugins_url( '../assets/compiled/slick.min.js', __FILE__ ) ), ['elementor-frontend'], '1.0.0', true);
     }
 
     public function get_script_depends() {

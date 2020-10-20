@@ -20,17 +20,17 @@ const uglify = require('gulp-uglify');
 
 // Compile CSS from Sass.
 function buildStyles() {
-	return src('app/scss/*.scss', 'app/scss/**/*.scss')
+	return src('scss/*.scss', 'scss/**/*.scss')
 		.pipe(plumber()) // Global error listener.
 		.pipe(sass({outputStyle: 'compressed'}))
 		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7']))
-		.pipe(dest('app/dist/'))
+		.pipe(dest('compiled/'))
 }
 
 // Watch changes on all *.scss files and trigger buildStyles() at the end.
 function watchFiles() {
 	watch(
-		['app/scss/*.scss', 'app/scss/**/*.scss', 'app/js/*', 'app/js/*/*'],
+		['scss/*.scss', 'scss/**/*.scss', 'js/*', 'js/*/*'],
 		{events: 'all', ignoreInitial: false},
 		series(buildStyles, scriptsHeader, scriptsFooter)
 		// series(buildStyles, scripts, scriptsFooter)
@@ -39,7 +39,7 @@ function watchFiles() {
 
 // Init Sass linter.
 function sassLint() {
-	return src(['app/scss/*.scss', 'app/scss/**/*.scss'])
+	return src(['scss/*.scss', 'scss/**/*.scss'])
 		.pipe(cache('sasslint'))
 		.pipe(sasslint({
 			configFile: '.sass-lint.yml'
@@ -49,36 +49,36 @@ function sassLint() {
 }
 
 function cssMin() {
-	return src(['app/dist/*.css'])
+	return src(['compiled/*.css'])
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('app/dist-minified/'));
+		.pipe(gulp.dest('dist-minified/'));
 }
 
 function JavaScriptMin() {
-	return src(['app/dist/*.js'])
+	return src(['compiled/*.js'])
 		.pipe(uglify())
 		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('app/dist-minified/'))
+		.pipe(gulp.dest('dist-minified/'))
 }
 
 
 // JavaScript concat
 function scriptsHeader() {
 	return src([
-		'app/js/lib/parallax.js',
+		'js/lib/parallax.js',
 	])
 		.pipe(concat('header.js'))
-		.pipe(dest('app/dist/'));
+		.pipe(dest('compiled/'));
 }
 
 function scriptsFooter() {
 	return src([
-		'app/js/components/footerscripts.js',
-		// 'app/js/components/slick.js',
+		'js/components/footerscripts.js',
+		// 'js/components/slick.js',
 	])
 		.pipe(concat('footer.js'))
-		.pipe(dest('app/dist/'));
+		.pipe(dest('compiled/'));
 }
 
 
