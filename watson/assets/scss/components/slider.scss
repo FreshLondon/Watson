@@ -1,20 +1,32 @@
+/* Slider */
+.slick-loading .slick-list {
+  background: #fff url('../img/ajax-loader.gif') center center no-repeat;
+}
 
-.slider {
+/* Icons */
+@font-face {
+  font-family: 'slick';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/slick.eot');
+  src: url('../fonts/slick.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/slick.woff') format('woff'),
+  url('../fonts/slick.ttf') format('truetype'),
+  url('../fonts/slick.svg#slick') format('svg');
+}
+
+.watson-slider {
+  display: block;
+
   .slick-track {
 	.slick-slide {
 	  > div {
-		padding: 0 4px;
+		padding: 0;
 
 		.slider-img {
 		  padding-top: 56%;
 		  background-repeat: no-repeat;
 		  background-position: center;
-
-		  @include respond-above(sm) {
-			padding: unset;
-			height: calc(100vh - 110px);
-			display: block;
-		  }
 
 		  img {
 			display: none;
@@ -25,27 +37,77 @@
   }
 
   button {
+	&:focus {
+	  outline: none;
+	}
+
 	&.slick-prev,
 	&.slick-next {
+	  font-size: 0;
+	  line-height: 0;
 	  position: absolute;
 	  top: 50%;
-	  transform: translateY(-50%);
-	  z-index: 999;
-	  font-size: 1rem;
+	  display: block;
+	  width: 20px;
+	  height: 20px;
+	  padding: 0;
+	  transform: translate(0, -50%);
+	  cursor: pointer;
+	  color: transparent;
+	  border: none;
+	  outline: none;
+	  background: transparent;
+	  z-index: 10;
+
+	  &:hover,
+	  &:focus {
+		color: transparent;
+		outline: none;
+		background: transparent;
+
+		&:before {
+		  opacity: 1;
+		}
+	  }
+
+	  &.slick-disabled {
+		opacity: .25;
+	  }
+
+	  &:before {
+		font-family: 'slick';
+		font-size: 20px;
+		line-height: 1;
+		opacity: .75;
+		color: white;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	  }
 	}
 
 	&.slick-prev {
-	  left: 0;
+	  left: -2px;
+
+	  &:before {
+		content: "\2190";
+	  }
 	}
 
 	&.slick-next {
-	  right: 0;
+	  right: -2px;
+
+	  &:before {
+		content: "\2192";
+	  }
 	}
   }
 
   ul.slick-dots {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 	position: absolute;
-	bottom: 0;
+	bottom: 20px;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 999;
@@ -57,10 +119,29 @@
 	  height: unset;
 	  width: unset;
 	  margin: 0 .25rem;
+	  padding: 0;
 
 	  button {
-		padding: .5rem 1rem;
-		font-size: 1rem;
+		padding: .5rem;
+		font-size: 0;
+		border-radius: 50%;
+		background-color: white;
+		opacity: .5;
+		transition: ease all .3s;
+
+		&:focus {
+		  outline: none;
+		}
+
+		&:hover {
+		  opacity: .7;
+		}
+	  }
+
+	  &.slick-active {
+		button {
+		  opacity: 1;
+		}
 	  }
 	}
   }

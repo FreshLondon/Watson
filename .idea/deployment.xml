@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="watson.freshlondon.biz" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="watson.freshlondon.biz" overwriteAll="false" preserveTimestamps="false" preserveFilePermissions="true" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
     <serverData>
       <paths name="watson.freshlondon.biz">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping local="" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/watson/assets/scss" />
+            <excludedPath local="true" path="$PROJECT_DIR$/watson/assets/js" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>

@@ -5,7 +5,7 @@ namespace Elementor;
 class Widget_Slider extends Widget_Base {
 
     public function get_name() {
-        return 'slider';
+        return 'watson-slider';
     }
 
     public function get_title() {
@@ -23,10 +23,15 @@ class Widget_Slider extends Widget_Base {
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
 
-        wp_register_script('slick-slider', esc_url( plugins_url( '../assets/compiled/slick.min.js', __FILE__ ) ), ['elementor-frontend'], '1.0.0', true);
+        wp_register_script('slick-slider', esc_url(plugins_url('../assets/compiled/slick.min.js', __FILE__)), ['elementor-frontend'], '1.0.0', true);
+//        wp_register_style('slider', esc_url(plugins_url('../assets/compiled/slider.min.css', __FILE__)), ['elementor-frontend'], '1.0.0', 'all');
     }
 
     public function get_script_depends() {
+        return ['slick-slider'];
+    }
+
+    public function get_style_depends() {
         return ['slick-slider'];
     }
 
@@ -96,6 +101,45 @@ class Widget_Slider extends Widget_Base {
         );
 
         $this->add_control(
+            'slidesToShow',
+            [
+                'label' => __('Slides per view', 'elementor'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['slides'],
+                'range' => [
+                    'slides' => [
+                        'min' => 1,
+                        'max' => 5,
+                        'step' => 1,
+                    ]
+                ],
+                'default' => [
+                    'unit' => 'slides',
+                    'size' => 3,
+                ],
+            ]
+        );
+        $this->add_control(
+            'slidesToScroll',
+            [
+                'label' => __('Slides to scroll', 'elementor'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['slides'],
+                'range' => [
+                    'slides' => [
+                        'min' => 1,
+                        'max' => 5,
+                        'step' => 1,
+                    ]
+                ],
+                'default' => [
+                    'unit' => 'slides',
+                    'size' => 1,
+                ],
+            ]
+        );
+
+        $this->add_control(
             'background_size',
             [
                 'label' => __('Background size', 'elementor'),
@@ -151,7 +195,7 @@ class Widget_Slider extends Widget_Base {
         <?php } ?>
 
 
-        <div class="slider">
+        <div class="watson-slider">
             <?php
             //            debug($settings);
             $images = $settings['gallery'];
@@ -175,18 +219,21 @@ class Widget_Slider extends Widget_Base {
 
         $autoplay = ($settings['autoplay'] == 'yes') ? 'true' : 'false';
         $autoplay_speed = $settings['autoplay_speed']['size'];
+        $slidesToShow = $settings['slidesToShow']['size'];
+        $slidesToScroll = $settings['slidesToScroll']['size'];
         ?>
 
         <script>
 					jQuery(function ($) {
-						$('.slider').slick({
+						$('.watson-slider').slick({
 							arrows: <?=$arrows;?>,
 							dots: <?=$dots;?>,
 
 							infinite: <?=$infinite;?>,
 							autoplay: <?=$autoplay;?>,
 							autoplaySpeed: <?=$autoplay_speed;?>,
-							slidesToShow: 1,
+							slidesToShow: <?=$slidesToShow;?>,
+							slidesToScroll: <?=$slidesToScroll;?>,
 						});
 					});
         </script>

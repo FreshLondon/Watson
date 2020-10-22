@@ -14,7 +14,8 @@
  * Enqueue scripts and styles
  */
 function watson_scripts() {
-    wp_enqueue_style('watson-front', esc_url( plugins_url( 'assets/compiled/watson-front.css', __FILE__ ) ) , array(), time(), true);
+    wp_enqueue_style('watson-front', esc_url( plugins_url( 'assets/compiled/watson.css', __FILE__ ) ) , array(), time(), 'all');
+
 //    wp_enqueue_script( 'script-name', WATSON_DIR( __FILE__ ). '/js/example.js', array(), '1.0.0', true );
 }
 
