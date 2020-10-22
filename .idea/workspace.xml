@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5dd6b78-e203-401e-8089-2b0b4a138aa1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/watson/assets/compiled/watson.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/fonts/slick.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/fonts/slick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/fonts/slick.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/fonts/slick.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/img/ajax-loader.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/widgets/widget-quotes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/fonts/fontawesome/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/fonts/fontawesome/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/fonts/fontawesome/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/fonts/fontawesome/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/fonts/fontawesome/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/watson/assets/scss/lib/fontawesome.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watson/assets/compiled/watson-styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/assets/compiled/watson.css" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/compiled/watson.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/watson/assets/scss/components/slider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/scss/components/slider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watson/assets/scss/watson-styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/scss/watson.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watson/watson.php" beforeDir="false" afterPath="$PROJECT_DIR$/watson/watson.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/assets/scss/watson.scss" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/scss/watson.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/watson/widgets/widget-slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/watson/widgets/widget-slider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="SCSS File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -48,26 +45,26 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/watson/assets/img" />
-    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/watson/assets/fonts/fontawesome" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/watson/assets" />
-      <recent name="$PROJECT_DIR$/watson/assets/compiled" />
-      <recent name="$PROJECT_DIR$/watson/widgets" />
-      <recent name="$PROJECT_DIR$/watson" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/watson/assets/fonts/fontawesome" />
       <recent name="$PROJECT_DIR$/watson/assets/img" />
       <recent name="$PROJECT_DIR$/watson/assets/fonts" />
       <recent name="$PROJECT_DIR$/watson/assets/compiled" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/watson/assets/scss/lib" />
+      <recent name="$PROJECT_DIR$/watson/assets" />
+      <recent name="$PROJECT_DIR$/watson/assets/compiled" />
+      <recent name="$PROJECT_DIR$/watson/widgets" />
       <recent name="$PROJECT_DIR$/watson" />
     </key>
   </component>
@@ -85,6 +82,7 @@
       <workItem from="1603150502403" duration="2693000" />
       <workItem from="1603179503577" duration="2265000" />
       <workItem from="1603242350965" duration="3777000" />
+      <workItem from="1603380421658" duration="3931000" />
     </task>
     <servers />
   </component>

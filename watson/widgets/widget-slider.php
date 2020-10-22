@@ -31,9 +31,9 @@ class Widget_Slider extends Widget_Base {
         return ['slick-slider'];
     }
 
-    public function get_style_depends() {
-        return ['slick-slider'];
-    }
+//    public function get_style_depends() {
+//        return ['fa-icons'];
+//    }
 
     protected function _register_controls() {
 
@@ -45,12 +45,52 @@ class Widget_Slider extends Widget_Base {
         );
 
         $this->add_control(
+            'display_title',
+            [
+                'label' => __('Display title?', 'elementor'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'elementor'),
+                'label_off' => __('No', 'elementor'),
+                'return_value' => 'yes',
+                'default' => 'no',
+            ]
+        );
+        $this->add_control(
             'title',
             [
                 'label' => __('Title', 'elementor'),
                 'label_block' => true,
                 'type' => Controls_Manager::TEXT,
                 'placeholder' => __('Enter your title', 'elementor'),
+                'condition' => [
+                    'display_title' => 'yes'
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'title_alignment',
+            [
+                'label' => __('Title alignment', 'elementor'),
+                'type' => \Elementor\Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __('Left', 'elementor'),
+                        'icon' => 'fa fa-align-left',
+                    ],
+                    'center' => [
+                        'title' => __('Center', 'elementor'),
+                        'icon' => 'fa fa-align-center',
+                    ],
+                    'right' => [
+                        'title' => __('Right', 'elementor'),
+                        'icon' => 'fa fa-align-right',
+                    ],
+                ],
+                'default' => 'center',
+                'condition' => [
+                    'display_title' => 'yes'
+                ],
             ]
         );
 
@@ -75,6 +115,31 @@ class Widget_Slider extends Widget_Base {
                 'default' => 'yes',
             ]
         );
+        $this->add_control(
+            'arrow_inside',
+            [
+                'label' => __('Arrows inside canvas?', 'elementor'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'elementor'),
+                'label_off' => __('No', 'elementor'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+                'condition' => [
+                    'arrows' => 'yes'
+                ],
+            ]
+        );
+        $this->add_control(
+            'arrow_color',
+            [
+                'label' => __('Arrow Color', 'elementor'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'condition' => [
+                    'arrows' => 'yes'
+                ],
+            ]
+        );
 
         $this->add_control(
             'dots',
@@ -85,6 +150,31 @@ class Widget_Slider extends Widget_Base {
                 'label_off' => __('No', 'elementor'),
                 'return_value' => 'yes',
                 'default' => 'yes',
+            ]
+        );
+        $this->add_control(
+            'dots_inside',
+            [
+                'label' => __('Dots inside canvas?', 'elementor'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'elementor'),
+                'label_off' => __('No', 'elementor'),
+                'return_value' => 'yes',
+                'default' => 'yes',
+                'condition' => [
+                    'dots' => 'yes'
+                ],
+            ]
+        );
+        $this->add_control(
+            'dots_color',
+            [
+                'label' => __('Dot Color', 'elementor'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'condition' => [
+                    'dots' => 'yes'
+                ],
             ]
         );
 
@@ -190,14 +280,31 @@ class Widget_Slider extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
         $background_size = 'background-size: ' . $settings['background_size'] . ';';
-        if ($settings['title']) { ?>
-            <h3><?= $settings['title']; ?></h3>
+        $display_titlet = $settings['display_title'];
+        $title_alignment = $settings['title_alignment'];
+
+        //slider settings:
+        $arrows = ($settings['arrows'] == 'yes') ? 'true' : 'false';
+        $arrow_color = $settings['arrow_color'];
+        $arrows_inside = ($settings['arrows_inside'] == 'yes') ? 'arrows_inside' : 'arrows_outside';
+        $dots = ($settings['dots'] == 'yes') ? 'true' : 'false';
+        $dots_color = $settings['dots_color'];
+        $dots_inside = ($settings['dots_inside'] == 'yes') ? 'dots-inside' : 'dots-outside';
+        $infinite = ($settings['infinite'] == 'yes') ? 'true' : 'false';
+        $autoplay = ($settings['autoplay'] == 'yes') ? 'true' : 'false';
+        $autoplay_speed = $settings['autoplay_speed']['size'];
+        $slidesToShow = $settings['slidesToShow']['size'];
+        $slidesToScroll = $settings['slidesToScroll']['size'];
+        // end slider settings!
+
+
+        if ($settings['display_title'] == 'yes' && $settings['title']) { ?>
+            <h3 style="text-align: <?= $title_alignment; ?>"><?= $settings['title']; ?></h3>
         <?php } ?>
 
 
-        <div class="watson-slider">
+        <div class="watson-slider <?= $dots_inside; ?>">
             <?php
-            //            debug($settings);
             $images = $settings['gallery'];
             shuffle($images);
             foreach ($images as $image) { ?>
@@ -211,22 +318,14 @@ class Widget_Slider extends Widget_Base {
             ?>
         </div>
 
-
-        <?php
-        $arrows = ($settings['arrows'] == 'yes') ? 'true' : 'false';
-        $dots = ($settings['dots'] == 'yes') ? 'true' : 'false';
-        $infinite = ($settings['infinite'] == 'yes') ? 'true' : 'false';
-
-        $autoplay = ($settings['autoplay'] == 'yes') ? 'true' : 'false';
-        $autoplay_speed = $settings['autoplay_speed']['size'];
-        $slidesToShow = $settings['slidesToShow']['size'];
-        $slidesToScroll = $settings['slidesToScroll']['size'];
-        ?>
-
         <script>
 					jQuery(function ($) {
 						$('.watson-slider').slick({
 							arrows: <?=$arrows;?>,
+                <?php if($arrows == 'true') :?>
+							prevArrow: '<button type="button" class="slick-prev <?=$arrows_inside;?>" style="color: <?=$arrow_color;?>;">Previous</button>',
+							nextArrow: '<button type="button" class="slick-next <?=$arrows_inside;?>" style="color: <?=$arrow_color;?>;">Next</button>',
+                <?endif;?>
 							dots: <?=$dots;?>,
 
 							infinite: <?=$infinite;?>,
@@ -237,6 +336,15 @@ class Widget_Slider extends Widget_Base {
 						});
 					});
         </script>
+        <style>
+            body .watson-slider ul.slick-dots li button {
+                background-color: <?=$dots_color;?>;
+            }
+
+            body .watson-slider.dots-outside ul.slick-dots {
+                bottom: -8px;
+            }
+        </style>
         <?php
     }
 

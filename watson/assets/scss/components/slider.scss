@@ -3,17 +3,6 @@
   background: #fff url('../img/ajax-loader.gif') center center no-repeat;
 }
 
-/* Icons */
-@font-face {
-  font-family: 'slick';
-  font-weight: normal;
-  font-style: normal;
-  src: url('../fonts/slick.eot');
-  src: url('../fonts/slick.eot?#iefix') format('embedded-opentype'),
-  url('../fonts/slick.woff') format('woff'),
-  url('../fonts/slick.ttf') format('truetype'),
-  url('../fonts/slick.svg#slick') format('svg');
-}
 
 .watson-slider {
   display: block;
@@ -48,12 +37,9 @@
 	  position: absolute;
 	  top: 50%;
 	  display: block;
-	  width: 20px;
-	  height: 20px;
 	  padding: 0;
 	  transform: translate(0, -50%);
 	  cursor: pointer;
-	  color: transparent;
 	  border: none;
 	  outline: none;
 	  background: transparent;
@@ -61,7 +47,6 @@
 
 	  &:hover,
 	  &:focus {
-		color: transparent;
 		outline: none;
 		background: transparent;
 
@@ -75,29 +60,38 @@
 	  }
 
 	  &:before {
-		font-family: 'slick';
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 900;
 		font-size: 20px;
 		line-height: 1;
 		opacity: .75;
-		color: white;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		display: block;
 	  }
 	}
 
 	&.slick-prev {
-	  left: -2px;
+	  left: 2px;
 
 	  &:before {
-		content: "\2190";
+		content: "\f104";
+	  }
+
+	  &.arrows_outside {
+		left: -15px;
 	  }
 	}
 
 	&.slick-next {
-	  right: -2px;
+	  right: 2px;
 
 	  &:before {
-		content: "\2192";
+		content: "\f105";
+	  }
+
+	  &.arrows_outside {
+		right: -15px;
 	  }
 	}
   }
@@ -125,7 +119,6 @@
 		padding: .5rem;
 		font-size: 0;
 		border-radius: 50%;
-		background-color: white;
 		opacity: .5;
 		transition: ease all .3s;
 
