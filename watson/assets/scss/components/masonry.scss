@@ -1,4 +1,4 @@
-.masonry {
+.watson-masonry {
   column-count: 1;
   column-gap: .5rem;
   @include respond-above(xs) {
@@ -13,7 +13,7 @@
 	column-count: 4;
   }
 
-  .masonry-item {
+  .watson-masonry-item {
 	background-color: #eee;
 	display: inline-block;
 	margin: 0 0 .5rem;

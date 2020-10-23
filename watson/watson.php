@@ -13,14 +13,26 @@
 /**
  * Enqueue scripts and styles
  */
+add_action('wp_enqueue_scripts', 'watson_scripts');
 function watson_scripts() {
-    wp_enqueue_style('watson-front', esc_url( plugins_url( 'assets/compiled/watson.css', __FILE__ ) ) , array(), time(), 'all');
-
+    wp_enqueue_style('watson-front', esc_url(plugins_url('assets/compiled/watson.css', __FILE__)), array(), time(), 'all');
 //    wp_enqueue_script( 'script-name', WATSON_DIR( __FILE__ ). '/js/example.js', array(), '1.0.0', true );
 }
 
-add_action('wp_enqueue_scripts', 'watson_scripts');
 
+/**
+ * Enqueue admin scripts and styles
+ */
+//add_action('admin_enqueue_scripts', 'watson_admin_head');
+//
+//function watson_admin_head() {
+//    wp_enqueue_style('watson-admin', esc_url(plugins_url('assets/compiled/watson-admin.css', __FILE__)), array(), time(), 'all');
+//}
+//
+
+/**
+ * Ready up Elementor stuffs
+ */
 class My_Elementor_Widgets {
 
     protected static $instance = null;

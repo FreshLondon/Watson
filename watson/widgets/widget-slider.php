@@ -67,7 +67,29 @@ class Widget_Slider extends Widget_Base {
                 ],
             ]
         );
-
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'title_typography',
+                'label' => __('Typography', 'elementor'),
+                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} h3',
+                'condition' => [
+                    'display_title' => 'yes'
+                ],
+            ]
+        );
+        $this->add_control(
+            'title_color',
+            [
+                'label' => __('Title color', 'elementor'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#fff',
+                'condition' => [
+                    'display_title' => 'yes'
+                ],
+            ]
+        );
         $this->add_control(
             'title_alignment',
             [
@@ -94,7 +116,6 @@ class Widget_Slider extends Widget_Base {
             ]
         );
 
-
         $this->add_control(
             'gallery',
             [
@@ -104,6 +125,14 @@ class Widget_Slider extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'sider_options',
+            [
+                'label' => __('Slider options', 'plugin-name'),
+                'type' => \Elementor\Controls_Manager::HEADING,
+                'separator' => 'before',
+            ]
+        );
         $this->add_control(
             'arrows',
             [
@@ -280,7 +309,7 @@ class Widget_Slider extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
         $background_size = 'background-size: ' . $settings['background_size'] . ';';
-        $display_titlet = $settings['display_title'];
+        $display_title = ($settings['display_title'] == 'yes') ? 'true' : 'false';;
         $title_alignment = $settings['title_alignment'];
 
         //slider settings:
@@ -298,7 +327,7 @@ class Widget_Slider extends Widget_Base {
         // end slider settings!
 
 
-        if ($settings['display_title'] == 'yes' && $settings['title']) { ?>
+        if ($display_title && $settings['title']) { ?>
             <h3 style="text-align: <?= $title_alignment; ?>"><?= $settings['title']; ?></h3>
         <?php } ?>
 
