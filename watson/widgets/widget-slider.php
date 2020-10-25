@@ -370,13 +370,39 @@ class Widget_Slider extends Widget_Base {
     }
 
     protected function render() {
+
+
+        function wordpress_thumbnail_sizes() {
+            global $_wp_additional_image_sizes;
+            $sizes = array();
+            $rSizes = array();
+            foreach (get_intermediate_image_sizes() as $s) {
+                $sizes[$s] = array(0, 0);
+                if (in_array($s, array('thumbnail', 'medium', 'medium_large', 'large'))) {
+                    $sizes[$s][0] = get_option($s . '_size_w');
+                    $sizes[$s][1] = get_option($s . '_size_h');
+                } else {
+                    if (isset($_wp_additional_image_sizes) && isset($_wp_additional_image_sizes[$s]))
+                        $sizes[$s] = array($_wp_additional_image_sizes[$s]['width'], $_wp_additional_image_sizes[$s]['height'],);
+                }
+            }
+            debug($sizes);
+            foreach ($sizes as $size => $atts) {
+                $rSizes[$size] = implode('x', $atts);
+            }
+            return $rSizes;
+        }
+
+        debug(wordpress_thumbnail_sizes());
+
+
+        //slider settings:
         $settings = $this->get_settings_for_display();
         $background_size = 'background-size: ' . $settings['background_size'] . ';';
         $slide_height = 'padding-top: ' . $settings['slide_height'] . '%;';
         $display_title = ($settings['display_title'] == 'yes') ? 'true' : 'false';;
         $title_alignment = $settings['title_alignment'];
-
-        //slider settings:
+        //
         $arrows = ($settings['arrows'] == 'yes') ? 'true' : 'false';
         $arrow_color = $settings['arrow_color'];
         $arrows_inside = ($settings['arrow_inside'] == 'yes') ? 'arrows_inside' : 'arrows_outside';

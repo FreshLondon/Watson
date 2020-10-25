@@ -23,7 +23,7 @@ class Widget_Quotes extends Widget_Base {
     protected function _register_controls() {
 
         $this->start_controls_section(
-            'section_title',
+            'section_content',
             [
                 'label' => __('Content', 'watson'),
             ]
@@ -101,7 +101,7 @@ class Widget_Quotes extends Widget_Base {
         );
 
         $quotes = new \Elementor\Repeater();
-        
+
         $quotes->add_control(
             'quote_content', [
                 'label' => __('Content', 'watson'),
@@ -153,17 +153,192 @@ class Widget_Quotes extends Widget_Base {
         );
 
         $this->end_controls_section();
+        $this->start_controls_section(
+            'section_style',
+            [
+                'label' => __('Style', 'watson'),
+            ]
+        );
+        $this->add_control(
+            'quote_spacing',
+            [
+                'label' => __('Spacing between quotes', 'plugin-domain'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', 'rem'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 150,
+                        'step' => 1,
+                    ],
+                    'rem' => [
+                        'min' => 0,
+                        'max' => 5,
+                        'step' => 0.1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'rem',
+                    'size' => 2,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .watson-quote' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'advanced_styling',
+            [
+                'label' => __('Toggle advanced styling?', 'watson'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __('Yes', 'watson'),
+                'label_off' => __('No', 'watson'),
+                'return_value' => 'yes',
+                'default' => 'no',
+            ]
+        );
+        $this->add_control(
+            'color_scheme',
+            [
+                'label' => __('General color scheme', 'watson'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#000',
+                'condition' => [
+                    'advanced_styling' => ''
+                ],
+            ]
+        );
+        $this->add_control(
+            'hr1',
+            [
+                'type' => \Elementor\Controls_Manager::DIVIDER,
+                'condition' => [
+                    'advanced_styling' => 'yes'
+                ],
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'content_typography',
+                'label' => __('Content: typography', 'watson'),
+                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .watson-quote-author',
+                'condition' => [
+                    'advanced_styling' => 'yes'
+                ],
+            ]
+        );
+        $this->add_control(
+            'content_color',
+            [
+                'label' => __('Content: text color', 'watson'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#000',
+                'condition' => [
+                    'advanced_styling' => 'yes'
+                ],
+            ]
+        );
+        $this->add_control(
+            'content_alignment',
+            [
+                'label' => __('Content: alignment', 'watson'),
+                'type' => \Elementor\Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __('Left', 'watson'),
+                        'icon' => 'fa fa-align-left',
+                    ],
+                    'center' => [
+                        'title' => __('Center', 'watson'),
+                        'icon' => 'fa fa-align-center',
+                    ],
+                    'right' => [
+                        'title' => __('Right', 'watson'),
+                        'icon' => 'fa fa-align-right',
+                    ],
+                ],
+                'default' => 'left',
+                'condition' => [
+                    'advanced_styling' => 'yes'
+                ],
+            ]
+        );
+        $this->add_control(
+            'hr2',
+            [
+                'type' => \Elementor\Controls_Manager::DIVIDER,
+                'condition' => [
+                    'advanced_styling' => 'yes'
+                ],
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'author_typography',
+                'label' => __('Author: typography', 'watson'),
+                'scheme' => Scheme_Typography::TYPOGRAPHY_1,
+                'selector' => '{{WRAPPER}} .watson-quote-author',
+                'condition' => [
+                    'advanced_styling' => 'yes'
+                ],
+            ]
+        );
+        $this->add_control(
+            'author_color',
+            [
+                'label' => __('Author: text color', 'watson'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#000',
+                'condition' => [
+                    'advanced_styling' => 'yes'
+                ],
+            ]
+        );
+        $this->add_control(
+            'author_alignment',
+            [
+                'label' => __('Author: alignment', 'watson'),
+                'type' => \Elementor\Controls_Manager::CHOOSE,
+                'options' => [
+                    'left' => [
+                        'title' => __('Left', 'watson'),
+                        'icon' => 'fa fa-align-left',
+                    ],
+                    'center' => [
+                        'title' => __('Center', 'watson'),
+                        'icon' => 'fa fa-align-center',
+                    ],
+                    'right' => [
+                        'title' => __('Right', 'watson'),
+                        'icon' => 'fa fa-align-right',
+                    ],
+                ],
+                'default' => 'left',
+                'condition' => [
+                    'advanced_styling' => 'yes'
+                ],
+            ]
+        );
+        $this->end_controls_section();
     }
 
     protected function render() {
         $settings = $this->get_settings_for_display();
         $display_title = ($settings['display_title'] == 'yes') ? 'true' : 'false';;
         $title_alignment = $settings['title_alignment'];
+        $color_scheme = $settings['color_scheme'];
 
         if ($display_title && $settings['title']) { ?>
-            <h3 style="text-align: <?= $title_alignment; ?>"><?= $settings['title']; ?></h3>
+            <h3 style="text-align: <?= $title_alignment; ?>;"><?= $settings['title']; ?></h3>
         <?php } ?>
-
+        <style>
+            :root {
+                --col-quotes: <?=$color_scheme;?>;
+            }
+        </style>
         <div class="watson-quotes">
             <?php
             $quotes = $settings['quotes'];
@@ -171,14 +346,19 @@ class Widget_Quotes extends Widget_Base {
             if ($shuffle == 'yes') :
                 shuffle($quotes);
             endif;
+
+            $content_alignment = $settings['content_alignment'];
+            $author_alignment = $settings['author_alignment'];
+
+
             foreach ($quotes as $quote) {
                 $quote_author = $quote['quote_author'];
                 $quote_content = $quote['quote_content'];
                 ?>
 
                 <div class="watson-quote">
-                    <div class="watson-quote-content"><?= $quote_content; ?></div>
-                    <div class="watson-quote-author"><?= $quote_author; ?></div>
+                    <div class="watson-quote-content" style="text-align: <?= $content_alignment; ?>;"><?= $quote_content; ?></div>
+                    <div class="watson-quote-author" style="text-align: <?= $author_alignment; ?>;"><?= $quote_author; ?></div>
                 </div>
                 <?php
             }
