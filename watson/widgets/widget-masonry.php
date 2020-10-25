@@ -13,7 +13,7 @@ class Widget_Masonry extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'fa fa-list-alt';
+        return 'fa fa-square';
     }
 
     public function get_categories() {

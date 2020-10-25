@@ -48,6 +48,7 @@ class My_Elementor_Widgets {
     protected function __construct() {
         require_once('widgets/widget-slider.php');
         require_once('widgets/widget-masonry.php');
+        require_once('widgets/widget-quotes.php');
 //        require_once('widgets/widget-tag-buttons.php');
         add_action('elementor/widgets/widgets_registered', [$this, 'register_widgets']);
     }
@@ -55,8 +56,11 @@ class My_Elementor_Widgets {
     public function register_widgets() {
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Slider());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Masonry());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Quotes());
 //        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Tags());
         //		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Category_Buttons() );
+        // logo slider
+        // testimonials slider
 
 
     }
@@ -66,4 +70,18 @@ class My_Elementor_Widgets {
 add_action('init', 'my_elementor_init');
 function my_elementor_init() {
     My_Elementor_Widgets::get_instance();
+}
+
+add_action('elementor/editor/before_enqueue_scripts', function() {
+    wp_enqueue_style( 'watson-front', esc_url(plugins_url('assets/compiled/watson-admin.css', __FILE__)), array(), time(), 'all' );
+//    wp_enqueue_script( ... );
+});
+
+/**
+ * DEBUGGING
+ */
+function debug($data) {
+    print('<pre>');
+    print_r($data);
+    print('</pre>');
 }

@@ -13,7 +13,7 @@ class Widget_Slider extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'fa fa-list-alt';
+        return 'fa fa-images';
     }
 
     public function get_categories() {
@@ -117,6 +117,13 @@ class Widget_Slider extends Widget_Base {
         );
 
         $this->add_control(
+            'hr',
+            [
+                'type' => \Elementor\Controls_Manager::DIVIDER,
+            ]
+        );
+
+        $this->add_control(
             'gallery',
             [
                 'label' => __('Add Images', 'elementor'),
@@ -125,12 +132,11 @@ class Widget_Slider extends Widget_Base {
             ]
         );
 
-        $this->add_control(
-            'sider_options',
+        $this->end_controls_section();
+        $this->start_controls_section(
+            'navigation_options',
             [
-                'label' => __('Slider options', 'plugin-name'),
-                'type' => \Elementor\Controls_Manager::HEADING,
-                'separator' => 'before',
+                'label' => __('Navigation options', 'watson'),
             ]
         );
         $this->add_control(
@@ -169,7 +175,12 @@ class Widget_Slider extends Widget_Base {
                 ],
             ]
         );
-
+        $this->add_control(
+            'hr',
+            [
+                'type' => \Elementor\Controls_Manager::DIVIDER,
+            ]
+        );
         $this->add_control(
             'dots',
             [
@@ -206,7 +217,13 @@ class Widget_Slider extends Widget_Base {
                 ],
             ]
         );
-
+        $this->end_controls_section();
+        $this->start_controls_section(
+            'sider_options',
+            [
+                'label' => __('Slider options', 'watson'),
+            ]
+        );
         $this->add_control(
             'infinite',
             [
@@ -219,10 +236,10 @@ class Widget_Slider extends Widget_Base {
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
             'slidesToShow',
             [
-                'label' => __('Slides per view', 'elementor'),
+                'label' => __('Slides per view (click device icon)', 'elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['slides'],
                 'range' => [
@@ -231,6 +248,19 @@ class Widget_Slider extends Widget_Base {
                         'max' => 5,
                         'step' => 1,
                     ]
+                ],
+                'devices' => ['desktop', 'tablet', 'mobile'],
+                'desktop_default' => [
+                    'unit' => 'slides',
+                    'size' => 3,
+                ],
+                'tablet_default' => [
+                    'unit' => 'slides',
+                    'size' => 2,
+                ],
+                'mobile_default' => [
+                    'unit' => 'slides',
+                    'size' => 1,
                 ],
                 'default' => [
                     'unit' => 'slides',
@@ -257,7 +287,32 @@ class Widget_Slider extends Widget_Base {
                 ],
             ]
         );
-
+        $this->add_control(
+            'slide_height_note',
+            [
+//                'label' => __( '', 'plugin-name' ),
+                'type' => \Elementor\Controls_Manager::RAW_HTML,
+                'raw' => __('Slide height is a percentage of the width. 100% is a square, 75% is a 4:3 image.', 'plugin-name'),
+                'content_classes' => 'watson-controls-note',
+            ]
+        );
+        $this->add_control(
+            'slide_height',
+            [
+                'label' => __('Slide height (%)', 'elementor'),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'min' => 1,
+                'max' => 200,
+                'step' => 1,
+                'default' => 75,
+            ]
+        );
+        $this->add_control(
+            'hr2',
+            [
+                'type' => \Elementor\Controls_Manager::DIVIDER,
+            ]
+        );
         $this->add_control(
             'background_size',
             [
@@ -270,7 +325,12 @@ class Widget_Slider extends Widget_Base {
                 ],
             ]
         );
-
+        $this->add_control(
+            'hr3',
+            [
+                'type' => \Elementor\Controls_Manager::DIVIDER,
+            ]
+        );
         $this->add_control(
             'autoplay',
             [
@@ -300,6 +360,9 @@ class Widget_Slider extends Widget_Base {
                     'unit' => 'ms',
                     'size' => 2000,
                 ],
+                'condition' => [
+                    'autoplay' => 'yes'
+                ],
             ]
         );
 
@@ -309,13 +372,14 @@ class Widget_Slider extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
         $background_size = 'background-size: ' . $settings['background_size'] . ';';
+        $slide_height = 'padding-top: ' . $settings['slide_height'] . '%;';
         $display_title = ($settings['display_title'] == 'yes') ? 'true' : 'false';;
         $title_alignment = $settings['title_alignment'];
 
         //slider settings:
         $arrows = ($settings['arrows'] == 'yes') ? 'true' : 'false';
         $arrow_color = $settings['arrow_color'];
-        $arrows_inside = ($settings['arrows_inside'] == 'yes') ? 'arrows_inside' : 'arrows_outside';
+        $arrows_inside = ($settings['arrow_inside'] == 'yes') ? 'arrows_inside' : 'arrows_outside';
         $dots = ($settings['dots'] == 'yes') ? 'true' : 'false';
         $dots_color = $settings['dots_color'];
         $dots_inside = ($settings['dots_inside'] == 'yes') ? 'dots-inside' : 'dots-outside';
@@ -323,6 +387,8 @@ class Widget_Slider extends Widget_Base {
         $autoplay = ($settings['autoplay'] == 'yes') ? 'true' : 'false';
         $autoplay_speed = $settings['autoplay_speed']['size'];
         $slidesToShow = $settings['slidesToShow']['size'];
+        $slidesToShow_tablet = ($settings['slidesToShow_tablet']['size']) ? $settings['slidesToShow_tablet']['size'] : $slidesToShow;
+        $slidesToShow_mobile = ($settings['slidesToShow_mobile']['size']) ? $settings['slidesToShow_mobile']['size'] : $slidesToShow;
         $slidesToScroll = $settings['slidesToScroll']['size'];
         // end slider settings!
 
@@ -338,7 +404,7 @@ class Widget_Slider extends Widget_Base {
             shuffle($images);
             foreach ($images as $image) { ?>
                 <div class="slider-img-wrapper">
-                    <div class="slider-img" style="background-image: url(<?= $image['url']; ?>);<?= $background_size; ?>">
+                    <div class="slider-img" style="background-image: url(<?= $image['url']; ?>);<?= $background_size; ?> <?= $slide_height; ?>">
                         <img src="<?= $image['url']; ?>">
                     </div>
                 </div>
@@ -362,6 +428,27 @@ class Widget_Slider extends Widget_Base {
 							autoplaySpeed: <?=$autoplay_speed;?>,
 							slidesToShow: <?=$slidesToShow;?>,
 							slidesToScroll: <?=$slidesToScroll;?>,
+
+
+							responsive: [
+								{
+									breakpoint: 992,
+									settings: {
+										slidesToShow: <?=$slidesToShow;?>,
+									}
+								}, {
+									breakpoint: 768,
+									settings: {
+										slidesToShow: <?=$slidesToShow_tablet;?>,
+									}
+								}, {
+									breakpoint: 576,
+									settings: {
+										slidesToShow: <?=$slidesToShow_mobile;?>,
+									}
+								},
+
+							]
 						});
 					});
         </script>
