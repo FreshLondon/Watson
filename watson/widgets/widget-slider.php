@@ -38,7 +38,7 @@ class Widget_Slider extends Widget_Base {
     protected function _register_controls() {
 
         $this->start_controls_section(
-            'section_title',
+            'section_content',
             [
                 'label' => __('Content', 'elementor'),
             ]
@@ -131,6 +131,19 @@ class Widget_Slider extends Widget_Base {
                 'default' => [],
             ]
         );
+        $thumb_size = watson_thumb_sizes2();
+        $thumb_Size = $thumb_size;
+        $this->add_control(
+            'thumbnail_size',
+            [
+                'label' => __('Image source size', 'watson'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    $thumb_Size,
+                ],
+            ]
+        );
+
 
         $this->end_controls_section();
         $this->start_controls_section(
@@ -370,30 +383,9 @@ class Widget_Slider extends Widget_Base {
     }
 
     protected function render() {
-
-
-        function wordpress_thumbnail_sizes() {
-            global $_wp_additional_image_sizes;
-            $sizes = array();
-            $rSizes = array();
-            foreach (get_intermediate_image_sizes() as $s) {
-                $sizes[$s] = array(0, 0);
-                if (in_array($s, array('thumbnail', 'medium', 'medium_large', 'large'))) {
-                    $sizes[$s][0] = get_option($s . '_size_w');
-                    $sizes[$s][1] = get_option($s . '_size_h');
-                } else {
-                    if (isset($_wp_additional_image_sizes) && isset($_wp_additional_image_sizes[$s]))
-                        $sizes[$s] = array($_wp_additional_image_sizes[$s]['width'], $_wp_additional_image_sizes[$s]['height'],);
-                }
-            }
-            debug($sizes);
-            foreach ($sizes as $size => $atts) {
-                $rSizes[$size] = implode('x', $atts);
-            }
-            return $rSizes;
-        }
-
-        debug(wordpress_thumbnail_sizes());
+        $thumb_size = watson_thumb_sizes2();
+        $thumb_Size = $thumb_size;
+        debug($thumb_Size);
 
 
         //slider settings:

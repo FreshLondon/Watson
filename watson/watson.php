@@ -72,8 +72,8 @@ function my_elementor_init() {
     My_Elementor_Widgets::get_instance();
 }
 
-add_action('elementor/editor/before_enqueue_scripts', function() {
-    wp_enqueue_style( 'watson-front', esc_url(plugins_url('assets/compiled/watson-admin.css', __FILE__)), array(), time(), 'all' );
+add_action('elementor/editor/before_enqueue_scripts', function () {
+    wp_enqueue_style('watson-front', esc_url(plugins_url('assets/compiled/watson-admin.css', __FILE__)), array(), time(), 'all');
 //    wp_enqueue_script( ... );
 });
 
@@ -84,4 +84,50 @@ function debug($data) {
     print('<pre>');
     print_r($data);
     print('</pre>');
+}
+
+/**
+ * Get thumbnail sizes
+ */
+function watson_thumb_sizes() {
+    global $_wp_additional_image_sizes;
+    $sizes = array();
+    $tSizes = array();
+    foreach (get_intermediate_image_sizes() as $s) {
+        $sizes[$s] = array(0, 0);
+        if (in_array($s, array('thumbnail', 'medium', 'medium_large', 'large'))) {
+            $sizes[$s][0] = get_option($s . '_size_w');
+            $sizes[$s][1] = get_option($s . '_size_h');
+        } else {
+            if (isset($_wp_additional_image_sizes) && isset($_wp_additional_image_sizes[$s]))
+                $sizes[$s] = array($_wp_additional_image_sizes[$s]['width'], $_wp_additional_image_sizes[$s]['height'],);
+        }
+    }
+    foreach ($sizes as $size => $atts) {
+        $tSizes[] .= '\'' . $size . '\'' . ' => __(\'' . $size . ': ' . implode(' x ', $atts) . '\', \'watson\')';
+    }
+    return $tSizes;
+}
+
+/**
+ * Get thumbnail sizes
+ */
+function watson_thumb_sizes2() {
+    global $_wp_additional_image_sizes;
+    $sizes = array();
+    $tSizes = array();
+    foreach (get_intermediate_image_sizes() as $s) {
+        $sizes[$s] = array(0, 0);
+        if (in_array($s, array('thumbnail', 'medium', 'medium_large', 'large'))) {
+            $sizes[$s][0] = get_option($s . '_size_w');
+            $sizes[$s][1] = get_option($s . '_size_h');
+        } else {
+            if (isset($_wp_additional_image_sizes) && isset($_wp_additional_image_sizes[$s]))
+                $sizes[$s] = array($_wp_additional_image_sizes[$s]['width'], $_wp_additional_image_sizes[$s]['height'],);
+        }
+    }
+    foreach ($sizes as $size => $atts) {
+        $tSizes[$size] = $size . ': ' . implode(' x ', $atts);
+    }
+    return $tSizes;
 }
