@@ -16,9 +16,15 @@ class Widget_Masonry extends Widget_Base {
         return 'fa fa-square';
     }
 
+
+
+
     public function get_categories() {
         return ['basic'];
     }
+
+
+
 
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
@@ -27,6 +33,9 @@ class Widget_Masonry extends Widget_Base {
         wp_register_style('fancybox-css', esc_url(plugins_url('../assets/compiled/jquery.fancybox.min.css', __FILE__)), ['elementor-frontend'], '3.5.7', 'screen');
     }
 
+
+
+
     public function get_script_depends() {
         return ['fancybox-js'];
     }
@@ -34,7 +43,7 @@ class Widget_Masonry extends Widget_Base {
     public function get_style_depends() {
         return ['fancybox-css'];
     }
-
+// register controld
     protected function _register_controls() {
 
         $this->start_controls_section(
