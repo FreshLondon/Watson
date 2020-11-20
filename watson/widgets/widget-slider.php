@@ -131,7 +131,7 @@ class Widget_Slider extends Widget_Base {
                 'default' => [],
             ]
         );
-        $thumb_size = watson_thumb_sizes2();
+        $thumb_size = watson_thumb_sizes();
         $thumb_Size = $thumb_size;
         $this->add_control(
             'thumbnail_size',
@@ -383,9 +383,9 @@ class Widget_Slider extends Widget_Base {
     }
 
     protected function render() {
-        $thumb_size = watson_thumb_sizes2();
+        $thumb_size = watson_thumb_sizes();
         $thumb_Size = $thumb_size;
-        debug($thumb_Size);
+//        debug($thumb_Size);
 
 
         //slider settings:

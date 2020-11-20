@@ -199,10 +199,6 @@ class Widget_Masonry extends Widget_Base {
         </div>
         <?php
     }
-
     protected function _content_template() {
-
     }
-
-
 }

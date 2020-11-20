@@ -49,6 +49,7 @@ class My_Elementor_Widgets {
         require_once('widgets/widget-slider.php');
         require_once('widgets/widget-masonry.php');
         require_once('widgets/widget-quotes.php');
+        require_once('widgets/widget-woocommerce-add-to-cart.php');
 //        require_once('widgets/widget-tag-buttons.php');
         add_action('elementor/widgets/widgets_registered', [$this, 'register_widgets']);
     }
@@ -57,14 +58,8 @@ class My_Elementor_Widgets {
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Slider());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Masonry());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Quotes());
-//        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Tags());
-        //		\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Category_Buttons() );
-        // logo slider
-        // testimonials slider
-
-
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_WooAddToCart());
     }
-
 }
 
 add_action('init', 'my_elementor_init');
@@ -80,39 +75,32 @@ add_action('elementor/editor/before_enqueue_scripts', function () {
 /**
  * DEBUGGING
  */
-function debug($data) {
-    print('<pre>');
-    print_r($data);
-    print('</pre>');
+if (!function_exists('debug')) {
+    function debug($data) {
+        print('<pre>');
+        print_r($data);
+        print('</pre>');
+    }
 }
 
+/**
+ * GENERATE A RTANDOM STRING
+ */
+if (!function_exists('generateRandomString')) {
+    function generateRandomString($length = 10) {
+        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+}
 /**
  * Get thumbnail sizes
  */
 function watson_thumb_sizes() {
-    global $_wp_additional_image_sizes;
-    $sizes = array();
-    $tSizes = array();
-    foreach (get_intermediate_image_sizes() as $s) {
-        $sizes[$s] = array(0, 0);
-        if (in_array($s, array('thumbnail', 'medium', 'medium_large', 'large'))) {
-            $sizes[$s][0] = get_option($s . '_size_w');
-            $sizes[$s][1] = get_option($s . '_size_h');
-        } else {
-            if (isset($_wp_additional_image_sizes) && isset($_wp_additional_image_sizes[$s]))
-                $sizes[$s] = array($_wp_additional_image_sizes[$s]['width'], $_wp_additional_image_sizes[$s]['height'],);
-        }
-    }
-    foreach ($sizes as $size => $atts) {
-        $tSizes[] .= '\'' . $size . '\'' . ' => __(\'' . $size . ': ' . implode(' x ', $atts) . '\', \'watson\')';
-    }
-    return $tSizes;
-}
-
-/**
- * Get thumbnail sizes
- */
-function watson_thumb_sizes2() {
     global $_wp_additional_image_sizes;
     $sizes = array();
     $tSizes = array();

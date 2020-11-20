@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5dd6b78-e203-401e-8089-2b0b4a138aa1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/watson/widgets/widget-woocommerce-add-to-cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/watson.php" beforeDir="false" afterPath="$PROJECT_DIR$/watson/watson.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/watson/widgets/widget-masonry.php" beforeDir="false" afterPath="$PROJECT_DIR$/watson/widgets/widget-masonry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/watson/widgets/widget-slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/watson/widgets/widget-slider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,26 +41,26 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/watson/assets/fonts/fontawesome" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/watson/widgets" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/watson/assets/fonts/fontawesome" />
-      <recent name="$PROJECT_DIR$/watson/assets/img" />
-      <recent name="$PROJECT_DIR$/watson/assets/fonts" />
-      <recent name="$PROJECT_DIR$/watson/assets/compiled" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/watson/assets/scss/lib" />
       <recent name="$PROJECT_DIR$/watson/assets" />
       <recent name="$PROJECT_DIR$/watson/assets/compiled" />
       <recent name="$PROJECT_DIR$/watson/widgets" />
       <recent name="$PROJECT_DIR$/watson" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/watson/widgets" />
+      <recent name="$PROJECT_DIR$/watson/assets/fonts/fontawesome" />
+      <recent name="$PROJECT_DIR$/watson/assets/img" />
+      <recent name="$PROJECT_DIR$/watson/assets/fonts" />
+      <recent name="$PROJECT_DIR$/watson/assets/compiled" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -84,6 +89,9 @@
       <workItem from="1603627445617" duration="955000" />
       <workItem from="1603634521568" duration="4504000" />
       <workItem from="1603643318692" duration="1265000" />
+      <workItem from="1604578107064" duration="107000" />
+      <workItem from="1605855762296" duration="6155000" />
+      <workItem from="1605872969632" duration="326000" />
     </task>
     <servers />
   </component>
@@ -110,10 +118,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="659" y="451" key="NewPhpFileDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603179527180" />
-    <state x="406" y="68" width="1027" height="817" key="find.popup" timestamp="1603637426925">
+    <state x="406" y="68" width="1027" height="817" key="find.popup" timestamp="1605866262752">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="406" y="68" width="1027" height="817" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1603637426925" />
+    <state x="406" y="68" width="1027" height="817" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1605866262752" />
     <state x="745" y="182" width="423" height="685" key="ftp.server.browser" timestamp="1603148501093">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
