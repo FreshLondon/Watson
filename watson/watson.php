@@ -46,19 +46,21 @@ class My_Elementor_Widgets {
     }
 
     protected function __construct() {
-        require_once('widgets/widget-slider.php');
-        require_once('widgets/widget-masonry.php');
-        require_once('widgets/widget-quotes.php');
-        require_once('widgets/widget-woocommerce-add-to-cart.php');
+//        require_once('widgets/widget-slider.php');
+        require_once('widgets/widget-slider-gif.php');
+//        require_once('widgets/widget-masonry.php');
+//        require_once('widgets/widget-quotes.php');
+//        require_once('widgets/widget-woocommerce-add-to-cart.php');
 //        require_once('widgets/widget-tag-buttons.php');
         add_action('elementor/widgets/widgets_registered', [$this, 'register_widgets']);
     }
 
     public function register_widgets() {
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Slider());
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Masonry());
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Quotes());
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_WooAddToCart());
+//        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Slider());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Slider_gif());
+//        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Masonry());
+//        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Quotes());
+//        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_WooAddToCart());
     }
 }
 

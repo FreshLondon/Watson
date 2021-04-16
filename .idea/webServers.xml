@@ -2,8 +2,22 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="3ae6cb85-6cb8-4165-b09a-85523f7d7825" name="watson.freshlondon.biz" url="https://freshlondon.biz">
-        <fileTransfer rootFolder="/home/freshlon/subdomains/testing.freshlondon.biz/wp-content/plugins" accessType="SFTP" host="host.alexhigh.co.uk" port="2211" sshConfigId="c7fe1490-da02-4658-bcc8-05ae464830f2" sshConfig="root@host.alexhigh.co.uk:2211 key" keyPair="true">
+      <webServer id="3ae6cb85-6cb8-4165-b09a-85523f7d7825" name="watson - Plantekoeb" url="https://plantekoeb.dk/">
+        <fileTransfer rootFolder="/home/plantekoeb/public_html/wp-content/plugins" accessType="SFTP" host="ftp.plantekoeb.dk" port="17177" sshConfigId="72ee864f-c872-4bb2-bd03-5fa68b93518a" sshConfig="plantekoeb@ftp.plantekoeb.dk:17177 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="5e4a6305-a4c3-4393-886c-fc2f9d9e4ece" name="ftp.plantekoeb.dk">
+        <fileTransfer rootFolder="/home/plantekoeb/staging.plantekoeb.dk/wp-content/plugins/watson" accessType="SFTP" host="ftp.plantekoeb.dk" port="17177" sshConfigId="72ee864f-c872-4bb2-bd03-5fa68b93518a" sshConfig="plantekoeb@ftp.plantekoeb.dk:17177 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="a8d554de-5f13-4dbf-a46c-396b93aa926c" name="Plantekoeb" url="">
+        <fileTransfer rootFolder="/home/plantekoeb/staging.plantekoeb.dk/wp-content/plugins/watson" accessType="SFTP" host="ftp.plantekoeb.dk" port="17177" sshConfigId="72ee864f-c872-4bb2-bd03-5fa68b93518a" sshConfig="plantekoeb@ftp.plantekoeb.dk:17177 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

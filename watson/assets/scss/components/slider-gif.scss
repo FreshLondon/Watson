@@ -1,0 +1,56 @@
+.watson-slider-gif {
+  .watson-slider-gif-slide {
+	.watson-slider-gif-slide-img {
+	  max-width: 275px;
+	  margin: 0 auto;
+	  width: 80%;
+	}
+
+	.watson-slider-gif-slide-title {
+	  color: white;
+	  font-size: 1.5rem;
+	  text-align: center;
+	  margin: 1rem 0 .5rem;
+	}
+
+	.watson-slider-gif-slide-content {
+	  color: white;
+	  font-size: 1rem;
+	  text-align: center;
+	  p {
+		margin-bottom: 0;
+	  }
+	}
+  }
+
+  ul.slick-dots {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+
+	li {
+	  button {
+		opacity: .2;
+		background: transparent;
+		font-size: 0;
+		padding: 0;
+		height: 1rem;
+		width: 1rem;
+		border-radius: 50%;
+		border: 2px solid white;
+		transition: ease-in-out all .3s;
+		margin: .5rem .25rem;
+	  }
+
+	  &.slick-active {
+		button {
+		  opacity: 1;
+		  background: white;
+		}
+	  }
+	}
+  }
+}

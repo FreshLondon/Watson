@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="watson.freshlondon.biz" overwriteAll="false" preserveTimestamps="false" preserveFilePermissions="true" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="watson - Plantekoeb" overwriteAll="false" preserveTimestamps="false" preserveFilePermissions="true" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
     <serverData>
-      <paths name="watson.freshlondon.biz">
+      <paths name="Plantekoeb">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
@@ -14,6 +14,30 @@
           </excludedPaths>
         </serverdata>
       </paths>
+      <paths name="ftp.plantekoeb.dk">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping local="" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/watson/assets/scss" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="watson - Plantekoeb">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping local="" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/watson/assets/scss" />
+            <excludedPath local="true" path="$PROJECT_DIR$/watson/assets/node_modules" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>
