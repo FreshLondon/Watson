@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="watson - Plantekoeb" overwriteAll="false" preserveTimestamps="false" preserveFilePermissions="true" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
+  <component name="PublishConfigData" autoUpload="Always" serverName="ftp.plantekoeb.dk - watson" overwriteAll="false" preserveTimestamps="false" preserveFilePermissions="true" remoteFilesAllowedToDisappearOnAutoupload="false" autoUploadExternalChanges="true">
     <serverData>
       <paths name="Plantekoeb">
         <serverdata>
@@ -23,6 +23,14 @@
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/watson/assets/scss" />
           </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="ftp.plantekoeb.dk - watson">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping local="" />
+          </mappings>
         </serverdata>
       </paths>
       <paths name="watson - Plantekoeb">

@@ -15,7 +15,7 @@
  */
 add_action('wp_enqueue_scripts', 'watson_scripts');
 function watson_scripts() {
-    wp_enqueue_style('watson-front', esc_url(plugins_url('assets/compiled/watson.css', __FILE__)), array(), time(), 'all');
+    wp_enqueue_style('watson-front', esc_url(plugins_url('assets/compiled/watson.css', __FILE__)), array(), '1.01', 'all');
 //    wp_enqueue_script( 'script-name', WATSON_DIR( __FILE__ ). '/js/example.js', array(), '1.0.0', true );
 }
 
@@ -48,6 +48,8 @@ class My_Elementor_Widgets {
     protected function __construct() {
 //        require_once('widgets/widget-slider.php');
         require_once('widgets/widget-slider-gif.php');
+        require_once('widgets/widget-fl-stock-count.php');
+        require_once('widgets/widget-fl-related-products.php');
 //        require_once('widgets/widget-masonry.php');
 //        require_once('widgets/widget-quotes.php');
 //        require_once('widgets/widget-woocommerce-add-to-cart.php');
@@ -58,6 +60,8 @@ class My_Elementor_Widgets {
     public function register_widgets() {
 //        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Slider());
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Slider_gif());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\FL_Stock_Count());
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\FL_Related_Products());
 //        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Masonry());
 //        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_Quotes());
 //        \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Elementor\Widget_WooAddToCart());
@@ -79,7 +83,7 @@ add_action('elementor/editor/before_enqueue_scripts', function () {
  */
 if (!function_exists('debug')) {
     function debug($data) {
-        print('<pre>');
+        print('<pre style="display:none;">');
         print_r($data);
         print('</pre>');
     }

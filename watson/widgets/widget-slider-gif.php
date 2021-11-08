@@ -123,6 +123,9 @@ class Widget_Slider_gif extends Widget_Base {
 
         </div>
 
+
+
+
         <script>
 					jQuery(function ($) {
 						$('.watson-slider-gif').slick({

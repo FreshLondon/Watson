@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5dd6b78-e203-401e-8089-2b0b4a138aa1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/assets/scss/components/slider-gif.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/watson/widgets/widget-slider-gif.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watson/assets/compiled/watson.css" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/compiled/watson.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watson/assets/js/components/slick.js" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/js/components/slick.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watson/assets/scss/watson.scss" beforeDir="false" afterPath="$PROJECT_DIR$/watson/assets/scss/watson.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/watson/watson.php" beforeDir="false" afterPath="$PROJECT_DIR$/watson/watson.php" afterDir="false" />
-    </list>
+    <list default="true" id="d5dd6b78-e203-401e-8089-2b0b4a138aa1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +9,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="DrupalConfiguration">
+    <drupalPath />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,8 +24,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JoomlaConfiguration">
+    <joomlaConfigPath />
+    <joomlaPath />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$USER_HOME$/wordpress" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1j7HumEBDhsjA0hzduV6KuvDP5J" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -43,19 +44,22 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="NEW_TOOLWINDOW_STRIPE_DEFAULTS" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/watson/assets/js/components" />
+    <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/watson/assets/node_modules/gulp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/watson/widgets" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="settings.php.frameworks" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/watson/assets/js/components" />
       <recent name="$PROJECT_DIR$/watson/widgets" />
+      <recent name="$PROJECT_DIR$/watson/assets/js/components" />
       <recent name="$PROJECT_DIR$/watson/assets/fonts/fontawesome" />
       <recent name="$PROJECT_DIR$/watson/assets/img" />
       <recent name="$PROJECT_DIR$/watson/assets/fonts" />
@@ -67,6 +71,26 @@
       <recent name="$PROJECT_DIR$/watson/widgets" />
       <recent name="$PROJECT_DIR$/watson" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="js.build_tools.gulp" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile>$PROJECT_DIR$/watson/assets/gulpfile.js</gulpfile>
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -99,6 +123,18 @@
       <workItem from="1605872969632" duration="326000" />
       <workItem from="1613674853746" duration="4495000" />
       <workItem from="1613679697545" duration="1415000" />
+      <workItem from="1618587011918" duration="170000" />
+      <workItem from="1618843908403" duration="78000" />
+      <workItem from="1633108628700" duration="2799000" />
+      <workItem from="1633121923017" duration="65000" />
+      <workItem from="1633179806122" duration="967000" />
+      <workItem from="1633278502870" duration="1000" />
+      <workItem from="1633361520148" duration="1895000" />
+      <workItem from="1633455395155" duration="38000" />
+      <workItem from="1636284874250" duration="214000" />
+      <workItem from="1636292702464" duration="166000" />
+      <workItem from="1636293781631" duration="359000" />
+      <workItem from="1636302986395" duration="2160000" />
     </task>
     <servers />
   </component>
@@ -107,5 +143,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="WordPressConfiguration" enabled="true">
+    <wordpressPath>$USER_HOME$/wordpress</wordpressPath>
   </component>
 </project>

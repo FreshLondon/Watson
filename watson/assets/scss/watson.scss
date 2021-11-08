@@ -8,11 +8,15 @@
 @import 'lib/variables';
 @import 'lib/mixins';
 @import 'lib/fontawesome';
-
 // Import style components
 body {
   @import 'components/slider';
   @import 'components/slider-gif';
   @import 'components/masonry';
   @import 'components/quotes';
+
+  .fl-stock-count {
+	font-size: 14px;
+	font-weight: 600;
+  }
 }
